@@ -5,29 +5,28 @@ import java.lang.*;
 public class Hangman {
 	public static void main(String[] args) {
 
+		//gbildruta gui = new gbildruta();
+
 		Scanner sc = new Scanner(System.in);
 		char[] ordet = getWord();
 		char[] display = new char[ordet.length*2];
 		String guess;
+		char[] displayCurrent = displayShite();
 		int gissningar = 6;
 
 
 		System.out.println("Input a letter or word: ");
-		System.out.println(display);
-		boolean correct = ordet.equals(guess);
-		do {
-			for ( : ) {
+		System.out.println(displayShite());
+		public static char[] displayShite() {
 
+			for(int j = 0; j < display.length; j++) {
+				if(j%2 == 0 || j == 0) {
+					display[j] = '_';
+				} else {
+					display[j] = ' ';
+				}
 			}
-		}while(!= correct);
-
-		for(int j = 0; j < display.length; j++) {
-			if(j%2 == 0 || j == 0) {
-				display[j] = '_';
-			} else {
-				display[j] = ' ';
-			}
-		}
+	}
 
 		do {
 			guess = sc.next();
@@ -42,14 +41,17 @@ public class Hangman {
 					}
 				} else {
 					//En bokstav
-					for(int i = 0; i < ordet.length; i++) {
+					//for(int i = 0; i < ordet.length; i++) {
 
 
-					}
+					//}
 				}
 			}
 		}while (gissningar != 0);
 	}
+
+
+
 
 	public static char[] getWord() {
 		try {
