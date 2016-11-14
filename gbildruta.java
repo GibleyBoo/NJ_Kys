@@ -1,16 +1,22 @@
 import java.awt.Dimension;
 import java.awt.event.*;
 
+
 import javax.swing.*;
 
 
+
+
 public class gbildruta {
-	public static String bytbild = ("shillary.png");
+	public static String bytbild = ("albin2.png");
 	public String usedchars = ("test, sfsfs , sfsfsffsfsfsffssf");
 	public String usedwords = ("tests");
+	public String stringinput = ("");
 
-//LÄGG TILL EN LYSSNARE SÅ MAN KAN FÅ UT ETT VÄRDE NÄR MAN SKRIVER IN I TESTFIELD fixa enter o grejer, samt kommentera och prata med jonas
+
+//LÃ„GG TILL EN LYSSNARE SÃ… MAN KAN FÃ… UT ETT VÃ„RDE NÃ„R MAN SKRIVER IN I TESTFIELD fixa enter o grejer, samt kommentera och prata med jonas
 	
+
 
 	public gbildruta() {
 		JFrame jwp = new JFrame();
@@ -27,6 +33,17 @@ public class gbildruta {
 		boxpanel.add(xgimg);
 		boxpanel.add(Box.createRigidArea(new Dimension(0,7)));
 		boxpanel.add(ginput);
+		
+		ginput.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+
+				stringinput = ginput.getText();
+				gusedwords.setText(stringinput);
+			}
+		});
+		
 		boxpanel.add(Box.createRigidArea(new Dimension(0,7)));
 		boxpanel.add(gusedchars);
 		boxpanel.add(Box.createRigidArea(new Dimension(0,7)));
@@ -50,15 +67,15 @@ public class gbildruta {
 
 
 
+
+
+
 public static void main(String[] args) {
 	 javax.swing.SwingUtilities.invokeLater(new Runnable() {
          public void run() {
             new gbildruta();
+            
          } 
 	 });
 	}
 }
-
-
-
-
