@@ -6,23 +6,24 @@ import javax.swing.*;
 
 
 
+public class gbildruta  {
+	
+	  String bytbild = ("albin2.png");
+	  String usedchars = ("not memes");
+	  String usedwords = ("tests");
+	  String testmeme = new String(hangman.ordgissDisplay());
+	private  String stringinput = (".");
 
-public class gbildruta {
-	public static String bytbild = ("albin2.png");
-	public String usedchars = ("test, sfsfs , sfsfsffsfsfsffssf");
-	public String usedwords = ("tests");
-	public String stringinput = ("");
-
-
-//LÄGG TILL EN LYSSNARE SÅ MAN KAN FÅ UT ETT VÄRDE NÄR MAN SKRIVER IN I TESTFIELD fixa enter o grejer, samt kommentera och prata med jonas
+	
 	
 
 
-	public gbildruta() {
+	public  gbildruta() {
 		JFrame jwp = new JFrame();
 		JPanel boxpanel = new JPanel();
 		JLabel gusedchars = new JLabel(usedchars);
 		JLabel gusedwords = new JLabel(usedwords);
+		JLabel blankDisplay = new JLabel("testmeme");
 		JTextField ginput = new JTextField(30);
 		ImageIcon gimg = new ImageIcon(bytbild);
 		JLabel xgimg = new JLabel();
@@ -31,6 +32,8 @@ public class gbildruta {
 		ginput.setMaximumSize(ginput.getPreferredSize() );
 		boxpanel.setLayout(new BoxLayout(boxpanel,BoxLayout.Y_AXIS));
 		boxpanel.add(xgimg);
+		boxpanel.add(Box.createRigidArea(new Dimension(0,7)));
+		boxpanel.add(blankDisplay);
 		boxpanel.add(Box.createRigidArea(new Dimension(0,7)));
 		boxpanel.add(ginput);
 		
@@ -41,6 +44,7 @@ public class gbildruta {
 
 				stringinput = ginput.getText();
 				gusedwords.setText(stringinput);
+			//make so jtextfield "ginput" clears text
 			}
 		});
 		
@@ -64,18 +68,16 @@ public class gbildruta {
 			});
 		
 	}
-
-
-
-
-
-
-public static void main(String[] args) {
-	 javax.swing.SwingUtilities.invokeLater(new Runnable() {
-         public void run() {
-            new gbildruta();
-            
-         } 
-	 });
+	
+	public String getStringInput(){
+		return stringinput;
 	}
+
+
+
+
 }
+
+
+
+
